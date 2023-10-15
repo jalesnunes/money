@@ -1,4 +1,4 @@
-import { css, styled } from "styled-components";
+import { css, styled } from 'styled-components'
 
 export const SummaryContainer = styled.section`
   /* Esse primeiro bloco de e extamente igual ao header container para justamente ele comecar extamente onde comeca o logo*/
@@ -14,15 +14,15 @@ export const SummaryContainer = styled.section`
 
   /* para ao inves desse component comecar bem abaixo do header ele ocupar uma parte do header */
   margin-top: -5rem;
-`;
+`
 
 // solucao para quando voce tem elementos quase todos iguais mas voce tem um que e diferente
 interface SummaryCardProps {
-    variant?: 'green'
+  variant?: 'green'
 }
 
 export const SummaryCard = styled.div<SummaryCardProps>`
-  background: ${(props) => props.theme["gray-600"]};
+  background: ${(props) => props.theme['gray-600']};
   border-radius: 6px;
   padding: 2rem;
 
@@ -30,7 +30,7 @@ export const SummaryCard = styled.div<SummaryCardProps>`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color: ${(props) => props.theme["gray-300"]};
+    color: ${(props) => props.theme['gray-300']};
   }
 
   /* por pardrao o tags como strong sao display inline e nao e possivel dar margin vertigal em elementos inline por isso mudamos para block, para podermos coloar um margin vertical no elemento */
@@ -40,7 +40,9 @@ export const SummaryCard = styled.div<SummaryCardProps>`
     font-size: 2rem;
   }
 
-  ${props => props.variant === 'green' && css`
-  background: ${props.theme['green-700']};
-  `}
-`;
+  ${(props) =>
+    props.variant === 'green' &&
+    css`
+      background: ${props.theme['green-700']};
+    `}
+`
