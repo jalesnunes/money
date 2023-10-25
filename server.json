@@ -15,6 +15,14 @@
             "category": "fast food",
             "amount": 60,
             "createdAt": "2021-08-31T19:50:07.000Z"
+        },
+        {
+            "id": 3,
+            "description": "BYU",
+            "type": "outcome",
+            "category": "Tuition",
+            "amount": 6000,
+            "createdAt": "2021-08-31T19:58:07.000Z"
         }
     ]
 }
