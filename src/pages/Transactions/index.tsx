@@ -21,7 +21,32 @@ export function Transactions() {
         <SearchForm />
         <TransactionTable>
           <tbody>
-            {transactions.map((transaction) => {
+            {transactions.length === 0 ? (
+              <tr>
+                <td>Não há transações cadastradas ainda.</td>
+              </tr>
+            ) : (
+              transactions.map((transaction) => {
+                return (
+                  <tr key={transaction.id}>
+                    <td width="50%">{transaction.description}</td>
+                    <td>
+                      <PriceHighlight variant={transaction.type}>
+                        {transaction.type === 'outcome' && '-  '}
+                        {'   '}
+                        {priceFormatter.format(transaction.amount)}
+                      </PriceHighlight>
+                    </td>
+
+                    <td>{transaction.category}</td>
+                    <td>
+                      {dateFormatter.format(new Date(transaction.createdAt))}
+                    </td>
+                  </tr>
+                )
+              })
+            )}
+            {/* {transactions.map((transaction) => {
               return (
                 <tr key={transaction.id}>
                   <td width="50%">{transaction.description}</td>
@@ -39,7 +64,7 @@ export function Transactions() {
                   </td>
                 </tr>
               )
-            })}
+            })} */}
           </tbody>
         </TransactionTable>
       </TransactionContainer>
