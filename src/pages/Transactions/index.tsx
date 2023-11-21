@@ -23,7 +23,7 @@ export function Transactions() {
           <tbody>
             {transactions.length === 0 ? (
               <tr>
-                <td>Não há transações cadastradas ainda.</td>
+                <td>There are no transactions registered yet.</td>
               </tr>
             ) : (
               transactions.map((transaction) => {
@@ -46,25 +46,6 @@ export function Transactions() {
                 )
               })
             )}
-            {/* {transactions.map((transaction) => {
-              return (
-                <tr key={transaction.id}>
-                  <td width="50%">{transaction.description}</td>
-                  <td>
-                    <PriceHighlight variant={transaction.type}>
-                      {transaction.type === 'outcome' && '-  '}
-                      {'   '}
-                      {priceFormatter.format(transaction.amount)}
-                    </PriceHighlight>
-                  </td>
-
-                  <td>{transaction.category}</td>
-                  <td>
-                    {dateFormatter.format(new Date(transaction.createdAt))}
-                  </td>
-                </tr>
-              )
-            })} */}
           </tbody>
         </TransactionTable>
       </TransactionContainer>
